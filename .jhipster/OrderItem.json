@@ -1,0 +1,49 @@
+{
+  "name": "OrderItem",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "dateCreated",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateUpdated",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "catalogItemId",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "orderItems",
+      "relationshipName": "order",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210406162219",
+  "entityTableName": "order_item",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

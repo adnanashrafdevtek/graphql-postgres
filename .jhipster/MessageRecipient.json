@@ -1,0 +1,43 @@
+{
+  "name": "MessageRecipient",
+  "fields": [
+    {
+      "fieldName": "userId",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "read",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "dateMessageRead",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "message",
+      "otherEntityRelationshipName": "messageRecipients",
+      "relationshipName": "message",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210406162419",
+  "entityTableName": "message_recipient",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

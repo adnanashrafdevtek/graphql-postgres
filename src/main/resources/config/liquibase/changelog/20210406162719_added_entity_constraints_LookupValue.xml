@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity LookupValue.
+    -->
+    <changeSet id="20210406162719-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="lookup_id"
+                                 baseTableName="lookup_value"
+                                 constraintName="fk_lookup_value_lookup_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="lookup"/>
+
+    </changeSet>
+</databaseChangeLog>

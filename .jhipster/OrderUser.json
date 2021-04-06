@@ -1,0 +1,36 @@
+{
+  "name": "OrderUser",
+  "fields": [
+    {
+      "fieldName": "userId",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "dateCreated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "orderUsers",
+      "relationshipName": "order",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210406162519",
+  "entityTableName": "order_user",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

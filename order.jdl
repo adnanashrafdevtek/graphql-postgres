@@ -1,0 +1,70 @@
+DEFAULT_MIN_LENGTH = 4
+DEFAULT_MAX_LENGTH = 50
+
+entity Order{
+	name String	required maxlength(DEFAULT_MAX_LENGTH) 
+    uuid String required /* this is GUID */
+    dateCreated Instant required
+    createdBy String required
+    dateUpdated Instant
+    updatedBy String
+    buyerUserId Long required /*user who starts this order*/
+	buyerOrganizationId Long required /*Platform.Organization id*/
+	supplierOrganizationId Long required /*Platform.Organization id*/
+    primarySupplierUserId Long required
+    //lkpOrderState
+}
+
+entity OrderItem{
+	name String	required maxlength(DEFAULT_MAX_LENGTH)
+    dateCreated Instant
+    dateUpdated Instant
+    catalogItemId Long required /*Platform.CatalogItem*/
+}
+
+entity Message{
+	message String	required maxlength(1000)
+    lkpMessageTypeId Long required 
+    senderUserId Long required  /*Buyer or seller*/
+    senderAlias String required
+    createdBy String required
+    dateCreated Instant required
+}
+
+
+entity MessageRecipient{
+    userId Long required 
+    read Boolean required
+    dateMessageRead Instant
+}
+
+entity OrderUser{
+    userId Long required 
+    dateCreated Instant
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Order{orderUsers} to OrderUser{order}
+	Message{messageRecipients} to MessageRecipient{message}
+	Order{messages} to Message{Order}
+	Order{orderItems} to OrderItem{Order}
+}
+
+//defining lookups
+//Q: Do we need lookup here?
+entity Lookup{
+	name String required maxlength(DEFAULT_MAX_LENGTH)
+}
+
+entity LookupValue{
+	value String required maxlength(DEFAULT_MAX_LENGTH)
+}
+
+relationship OneToMany {    
+    Lookup{lookupValues} to LookupValue{lookup}
+}
+
+filter *
+service all with serviceClass
+paginate all with pagination

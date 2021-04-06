@@ -1,0 +1,34 @@
+{
+  "name": "LookupValue",
+  "fields": [
+    {
+      "fieldName": "value",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "50"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "lookup",
+      "otherEntityRelationshipName": "lookupValues",
+      "relationshipName": "lookup",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210406162719",
+  "entityTableName": "lookup_value",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
