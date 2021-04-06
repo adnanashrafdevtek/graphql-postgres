@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.xcordia.document"
+    },
+    "jhipsterVersion": "6.9.0",
+    "applicationType": "monolith",
+    "baseName": "jhipster",
+    "packageName": "com.xcordia.document",
+    "packageFolder": "com/xcordia/document",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ODQwMzUzMGRmZDk1Y2E2MjdhM2ZmMDNiMTFjNGQxNjhmMDc0NzJhNGVkYzAyN2ZkNTkzOTBiOGI5NWMxNzU0M2ZjMmVjNzZiNTgyNTliMWIxOTIwNDk4YzQ2MzMwNGU5OTJjNGQ0MGU0MjFiYjA2MjExNWJiODQ0MmYyOTk3NDI=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1617725841469,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
